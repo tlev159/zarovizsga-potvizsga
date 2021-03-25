@@ -33,8 +33,7 @@ public class CleaningService {
   }
 
   private int ifIsAnOfficeGetSumOfCleaning(int sumOfCleaning, Iterator<Cleanable> it, Cleanable office) {
-    String isTheRightClass = office.getClass().toString();
-    if (isTheRightClass.contains("Office")) {
+    if (office.getType() == BuildingType.OFFICE) {
       sumOfCleaning += office.clean();
       it.remove();
     }
@@ -56,7 +55,8 @@ public class CleaningService {
     for (Cleanable cleanable:cleanables) {
       sb.append(cleanable.getAddress()).append(", ");
     }
-    return sb.delete(sb.length() - 2, sb.length()).toString();
+    return sb.delete(sb.length() - 2
+            , sb.length()).toString();
   }
 
   public List<Cleanable> getCleanables() {

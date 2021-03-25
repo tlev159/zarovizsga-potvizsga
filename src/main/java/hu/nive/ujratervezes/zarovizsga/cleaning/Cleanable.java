@@ -5,4 +5,6 @@ public interface Cleanable {
   public int clean();
 
   public String getAddress();
+
+  public BuildingType getType();
 }
