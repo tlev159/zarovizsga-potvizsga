@@ -14,11 +14,7 @@ public class Words {
         numberOfDigits++;
       }
     }
-    if (numberOfDigits > s.length() - numberOfDigits) {
-      return true;
-    } else {
-      return false;
-    }
+    return (numberOfDigits > s.length() - numberOfDigits) ? true:false;
   }
 
   private boolean isWordEmpty(String s) {
